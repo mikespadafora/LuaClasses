@@ -19,19 +19,19 @@ Car = {
 -- To create functions within a class the function must be named be defined like this: function <class name>:<function name>()
 
 function Car:New() -- This function can now be called inside of a variable and that variable will be able to access members/functions of this class
-  object = {}
+  local object = {}
   setmetatable(object, self)
   self.__index = self
   return object
 end
 
 function Car:GetPrettyName()
-  prettyName = self.make.." "..self.model
+  local prettyName = self.make.." "..self.model
   return prettyName
 end
 
 function Car:CarInfo()
-  info = string.format("My new %s %s is the color %s and can go as fast as %d miles per hour!", self.make, self.model, self.color, self.maxSpeed)
+  local info = string.format("My new %s %s is the color %s and can go as fast as %d miles per hour!", self.make, self.model, self.color, self.maxSpeed)
   return info
 end
 
